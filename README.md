@@ -1,7 +1,39 @@
 # Associated File Management Plugin
 
 Girder plugin for File Management
- 
+# How to use the plugin?
+Everything is linked by the key `patientId` it should be an de-identfied ID that allow us to link the pdf files (usually patient reports files) to the images
+
+**1.** Navigate to the intended file location within any folder (although we recommend creating a folder named "METADATA").
+<p align="center">
+  <img src="./readme-images/01.png" width="100%" title="hover text">
+</p>
+
+**2.** Upload the desired PDF file.
+<p align="center">
+  <img src="./readme-images/02.png" width="100%" title="hover text">
+</p>
+
+**3.** Include the 'patientId' key in the metadata.
+<p align="center">
+  <img src="./readme-images/03.png" width="100%" title="hover text">
+</p>
+
+**4.** Locate the image where the PDF should be linked.
+<p align="center">
+  <img src="./readme-images/04.png" width="100%" title="hover text">
+</p>
+
+**5.** Integrate the 'patientId' key in the respective location.
+<p align="center">
+  <img src="./readme-images/05.png" width="100%" title="hover text">
+</p>
+
+**6.** Access the HistomicsUI view to observe the organized folder structure with all the linked documents.
+<p align="center">
+  <img src="./readme-images/06.png" width="100%" title="hover text">
+</p>
+
 # How to install the plugin?
 
 For installing the plugin you will need to run the following command
@@ -63,14 +95,14 @@ cd ..
 git clone https://github.com/steveneschrich/histomics-file-management
 ```
 
-
-**2.** Build the plugin using `girder`:
-```bash
-girder build --mode=production
-```
-
-**3.** Install the plugin:
+**2.** Install the plugin:
 ```bash
 cd histomics-file-management
 pip install .
 ```
+
+**3.** Build the plugin using `girder`:
+```bash
+girder build --mode=production
+```
+
