@@ -1,0 +1,28 @@
+div.tree
+    button(type="button" class="btn btn-light" id="sidebar-button") 
+        span(class="s-panel-title h-panel-title")
+            span(class="icon-tags") Files
+            span(class="s-panel-controls")
+                i(class="icon-up-open")
+    aside(class="ui-sidebar")
+        div.content
+            div.tree-title Associated files
+            div.grid-container
+                div.grid-item
+                    pre.tree-code {patientId: "#{patientId}"}
+                div.grid-item
+                    button(type="button" class="btn btn-light" id="copy-patient-id-button") 
+                        span(class="glyphicon glyphicon-copy")
+            p.copy-message Copied!
+            each file in items
+                ul(class="file-tree")
+                    li(class="file-tree-item")
+                        div(class="folder-label" id="folder")
+                            span(class="glyphicon glyphicon-folder-close")
+                            span( id="folder-title") #{file.folderName}
+                        - var itemsInFolder = file.data
+                        each item in itemsInFolder
+                            ul(class="file-tree-subtree folder-closed" id="file")
+                                li(class="file-tree-subtree-item" itemId=item.itemId)
+                                    span(class="glyphicon glyphicon-file")
+                                    a(class="item-name" id="checkImage" data-toggle="tooltip" data-placement="right" title=item.name) #{item.name}
